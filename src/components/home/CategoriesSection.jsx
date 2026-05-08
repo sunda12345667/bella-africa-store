@@ -1,34 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { CATEGORIES } from '@/lib/categories';
 
 export default function CategoriesSection() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-8 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <span className="text-accent text-sm font-medium tracking-widest uppercase">Browse By</span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mt-2">Our Categories</h2>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-          {CATEGORIES.map((cat, index) => (
-            <motion.div
+        <div className="grid grid-cols-5 md:grid-cols-10 gap-2">
+          {CATEGORIES.map(cat => (
+            <Link
               key={cat.slug}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
+              to={`/shop?category=${cat.slug}`}
+              className="flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-primary/5 transition-colors group text-center"
             >
-              <Link
-                to={`/shop?category=${cat.slug}`}
-                className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-card hover:bg-accent/10 border border-border/50 hover:border-accent/30 transition-all group"
-              >
-                <span className="text-3xl group-hover:scale-110 transition-transform">{cat.icon}</span>
-                <span className="text-sm font-medium text-center leading-tight">{cat.name}</span>
-              </Link>
-            </motion.div>
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/8 flex items-center justify-center text-2xl group-hover:bg-primary/15 transition-colors border border-primary/10">
+                {cat.icon}
+              </div>
+              <span className="text-[10px] md:text-xs text-gray-600 font-medium leading-tight">{cat.name.split(' ')[0]}</span>
+            </Link>
           ))}
         </div>
       </div>

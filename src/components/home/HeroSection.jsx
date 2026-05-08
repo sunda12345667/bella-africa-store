@@ -1,77 +1,95 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, MessageCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { getWhatsAppSupportLink } from '@/lib/whatsappService';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function HeroSection({ heroImage }) {
+const SLIDES = [
+  {
+    bg: 'https://images.unsplash.com/photo-1608686207856-001b95cf60ca?w=1400&q=80',
+    title: 'Shipping & Delivery',
+    badge: 'Canada-Wide',
+    desc: 'Local delivery in Toronto & GTA. Canada-wide shipping for all your African grocery needs.',
+    cta: 'Shop Now',
+    overlay: 'from-primary/80 via-primary/50 to-transparent',
+  },
+  {
+    bg: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1400&q=80',
+    title: 'Fresh African Groceries',
+    badge: 'New Arrivals',
+    desc: 'Authentic foodstuffs, spices and fresh produce sourced directly from Africa.',
+    cta: 'Explore Now',
+    overlay: 'from-black/70 via-black/40 to-transparent',
+  },
+  {
+    bg: 'https://images.unsplash.com/photo-1506484381205-f7945653044d?w=1400&q=80',
+    title: 'Frozen Proteins & Meats',
+    badge: 'Best Sellers',
+    desc: 'Premium quality frozen meats and proteins. Order online, delivered fresh to your door.',
+    cta: 'Order Now',
+    overlay: 'from-primary/80 via-primary/50 to-transparent',
+  },
+];
+
+export default function HeroSection() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setCurrent(c => (c + 1) % SLIDES.length), 5000);
+    return () => clearInterval(t);
+  }, []);
+
+  const prev = () => setCurrent(c => (c - 1 + SLIDES.length) % SLIDES.length);
+  const next = () => setCurrent(c => (c + 1) % SLIDES.length);
+
+  const slide = SLIDES[current];
+
   return (
-    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center overflow-hidden">
+    <div className="relative w-full h-[320px] md:h-[480px] overflow-hidden bg-gray-100">
       {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Premium African ingredients"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-      </div>
+      <img
+        key={current}
+        src={slide.bg}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+      />
+      <div className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
-        <div className="max-w-xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+      {/* Content */}
+      <div className="relative h-full flex items-center">
+        <div className="max-w-7xl mx-auto px-8 md:px-12">
+          <span className="inline-block bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded mb-3">
+            {slide.badge}
+          </span>
+          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-3 max-w-lg">
+            {slide.title}
+          </h1>
+          <p className="text-white/80 text-sm md:text-base max-w-md mb-6">{slide.desc}</p>
+          <Link
+            to="/shop"
+            className="inline-block bg-accent text-accent-foreground font-bold px-7 py-3 rounded hover:bg-accent/90 transition-colors text-sm"
           >
-            <span className="inline-block text-amber-400 text-sm font-medium tracking-widest uppercase mb-4">
-              Premium African Grocery
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight">
-              The Taste of{' '}
-              <span className="italic text-amber-400">Home,</span>
-              <br />
-              Delivered to You
-            </h1>
-            <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-md">
-              Authentic African groceries sourced with care. From Nigerian foodstuffs to fresh produce — your heritage pantry awaits.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex flex-wrap gap-3 mt-8"
-          >
-            <Button asChild size="lg" className="h-12 px-8 bg-accent text-accent-foreground hover:bg-accent/90 font-medium rounded-full">
-              <Link to="/shop">
-                Shop Now
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="h-12 px-8 border-white/30 text-white hover:bg-white/10 rounded-full">
-              <a href={getWhatsAppSupportLink()} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Order via WhatsApp
-              </a>
-            </Button>
-          </motion.div>
-
-          {/* Trust badges */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-wrap gap-6 mt-10 text-white/50 text-xs tracking-wide"
-          >
-            <span>✓ Same-Day Delivery</span>
-            <span>✓ 100% Authentic</span>
-            <span>✓ WhatsApp Support</span>
-          </motion.div>
+            {slide.cta} →
+          </Link>
         </div>
       </div>
-    </section>
+
+      {/* Arrows */}
+      <button onClick={prev} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow">
+        <ChevronLeft className="w-5 h-5 text-gray-700" />
+      </button>
+      <button onClick={next} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow">
+        <ChevronRight className="w-5 h-5 text-gray-700" />
+      </button>
+
+      {/* Dots */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {SLIDES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2.5 h-2.5 rounded-full transition-colors ${i === current ? 'bg-accent' : 'bg-white/60'}`}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
