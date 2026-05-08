@@ -98,6 +98,9 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-xs text-white/40">© 2026 Bella Africa Store. All rights reserved.</p>
           <p className="text-xs text-white/40">Proudly serving the African diaspora in Canada 🇨🇦</p>
+          <Link to="/admin" className="text-xs text-white/20 hover:text-white/50 transition-colors ml-auto md:ml-0">
+            Admin
+          </Link>
         </div>
       </div>
     </footer>

@@ -24,6 +24,9 @@ import AdminLayout from '@/components/admin/AdminLayout';
 import Dashboard from '@/pages/admin/Dashboard';
 import Products from '@/pages/admin/Products';
 import Promotions from '@/pages/admin/Promotions';
+import Orders from '@/pages/admin/Orders';
+import Customers from '@/pages/admin/Customers';
+import AdminSettings from '@/pages/admin/Settings';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -69,6 +72,9 @@ const AuthenticatedApp = () => {
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/admin/products" element={<Products />} />
           <Route path="/admin/promotions" element={<Promotions />} />
+          <Route path="/admin/orders" element={<Orders />} />
+          <Route path="/admin/customers" element={<Customers />} />
+          <Route path="/admin/settings" element={<AdminSettings />} />
         </Route>
 
         <Route path="*" element={<PageNotFound />} />
