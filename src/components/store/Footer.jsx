@@ -18,7 +18,7 @@ export default function Footer() {
               Your premium African grocery destination in Canada. Bringing the authentic taste of home to your doorstep.
             </p>
             <a
-              href={getWhatsAppSupportLink()}
+              href="https://wa.me/14388365678"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-green-700 transition-colors"
@@ -76,11 +76,13 @@ export default function Footer() {
             <div className="flex flex-col gap-3 text-sm text-white/60">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-accent" />
-                <span>Toronto, Ontario, Canada</span>
+                <span>3817 46th Ave, Beaumont AB T4X 2W4, Canada</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0 text-accent" />
-                <span>+1 (555) 123-4567</span>
+                <a href="https://wa.me/14388365678" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                  +1 438-836-5678
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-accent" />
@@ -96,7 +98,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/40">© 2026 Bella Africa Store. All rights reserved.</p>
+          <p className="text-xs text-white/40">© 2026 Bella Africa Store. All rights reserved. · Beaumont, AB, Canada</p>
           <p className="text-xs text-white/40">Proudly serving the African diaspora in Canada 🇨🇦</p>
           <Link to="/admin" className="text-xs text-white/20 hover:text-white/50 transition-colors ml-auto md:ml-0">
             Admin

@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Switch } from '@/components/ui/switch';
 import { toast } from 'sonner';
 import { CATEGORIES } from '@/lib/categories';
+// CATEGORIES now includes: fresh_foods, frozen_foods, spices, drinks, snacks, african_groceries, flour_fufu, rice_beans, oils_seasonings, seafood, meat_products, ready_to_eat, herbal_products, dairy_breakfast
 import { Upload } from 'lucide-react';
 
 export default function ProductForm({ product, onClose }) {

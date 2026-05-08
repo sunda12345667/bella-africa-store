@@ -43,8 +43,8 @@ export default function Contact() {
 
               <div className="space-y-4">
                 {[
-                  { icon: MapPin, label: 'Visit Us', value: 'Toronto, Ontario, Canada' },
-                  { icon: Phone, label: 'Call Us', value: '+1 (555) 123-4567' },
+                  { icon: MapPin, label: 'Visit Us', value: '3817 46th Ave, Beaumont AB T4X 2W4, Canada' },
+                  { icon: Phone, label: 'WhatsApp / Call', value: '+1 438-836-5678' },
                   { icon: Mail, label: 'Email Us', value: 'hello@bellaafrica.ca' },
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-start gap-4 p-4 rounded-xl bg-muted/50">

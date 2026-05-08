@@ -21,16 +21,20 @@
     "category": {
       "type": "string",
       "enum": [
-        "african_foodstuff",
-        "nigerian_groceries",
+        "fresh_foods",
         "frozen_foods",
         "spices",
-        "fresh_produce",
         "drinks",
         "snacks",
-        "hair_products",
-        "beauty_products",
-        "kitchen_essentials"
+        "african_groceries",
+        "flour_fufu",
+        "rice_beans",
+        "oils_seasonings",
+        "seafood",
+        "meat_products",
+        "ready_to_eat",
+        "herbal_products",
+        "dairy_breakfast"
       ],
       "description": "Product category"
     },
@@ -71,8 +75,7 @@
       "description": "Product weight/size"
     },
     "nutritional_info": {
-      "type": "string",
-      "description": "Nutritional details"
+      "type": "string"
     },
     "tags": {
       "type": "array",

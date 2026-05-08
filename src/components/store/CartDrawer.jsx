@@ -80,9 +80,9 @@ export default function CartDrawer() {
             <div className="border-t pt-4 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-muted-foreground">Subtotal</span>
-                <span className="text-xl font-heading font-bold">${subtotal.toFixed(2)}</span>
+                <span className="text-xl font-heading font-bold">CAD ${subtotal.toFixed(2)}</span>
               </div>
-              <p className="text-xs text-muted-foreground">Shipping calculated at checkout</p>
+              <p className="text-xs text-muted-foreground">🚚 Free delivery over CAD $80 · Beaumont & Edmonton Area</p>
               <Button
                 asChild
                 className="w-full h-12 text-base font-medium bg-green-600 hover:bg-green-700 text-white"

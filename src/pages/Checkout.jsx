@@ -53,7 +53,7 @@ export default function Checkout() {
       </Link>
 
       <h1 className="text-3xl font-heading font-bold mb-2">WhatsApp Checkout</h1>
-      <p className="text-muted-foreground mb-8">Complete your details and we'll send your order via WhatsApp</p>
+      <p className="text-muted-foreground mb-8">Complete your details and we'll send your order to <strong className="text-green-700">+1 438-836-5678</strong> via WhatsApp</p>
 
       {/* Steps */}
       <div className="flex items-center gap-2 mb-10">
@@ -119,12 +119,12 @@ export default function Checkout() {
               {items.map(item => (
                 <div key={item.id} className="flex justify-between text-sm">
                   <span>{item.name} × {item.quantity}</span>
-                  <span className="font-medium">${(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="font-medium">CAD ${(item.price * item.quantity).toFixed(2)}</span>
                 </div>
               ))}
               <div className="border-t pt-3 flex justify-between font-heading font-bold text-lg">
                 <span>Total</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>CAD ${subtotal.toFixed(2)}</span>
               </div>
             </div>
 

@@ -19,8 +19,8 @@ export default function About() {
             <span className="text-accent text-sm font-medium tracking-widest uppercase">Our Story</span>
             <h1 className="text-4xl md:text-5xl font-heading font-bold mt-3">About Bella Africa</h1>
             <p className="mt-6 text-lg text-primary-foreground/70 leading-relaxed max-w-2xl mx-auto">
-              Born from a deep love for African culture and cuisine, Bella Africa is more than a grocery store — 
-              it's a bridge connecting the African diaspora in Canada to the authentic flavors of home.
+              Born from a deep love for African culture and cuisine, Bella Africa Store is based in Beaumont, Alberta — 
+              serving the African diaspora across Canada with authentic Nigerian and African groceries, spices, frozen foods and more.
             </p>
           </motion.div>
         </div>
@@ -44,17 +44,17 @@ export default function About() {
               </p>
             </div>
             <div className="bg-muted rounded-3xl p-8 text-center">
-              <p className="text-5xl font-heading font-bold text-accent">500+</p>
+              <p className="text-5xl font-heading font-bold text-accent">76+</p>
               <p className="text-muted-foreground mt-2">Authentic Products</p>
               <div className="mt-6 grid grid-cols-2 gap-4 text-center">
-                <div>
-                  <p className="text-2xl font-heading font-bold">10K+</p>
-                  <p className="text-sm text-muted-foreground">Happy Customers</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-heading font-bold">50+</p>
-                  <p className="text-sm text-muted-foreground">Cities Served</p>
-                </div>
+               <div>
+                 <p className="text-2xl font-heading font-bold">500+</p>
+                 <p className="text-sm text-muted-foreground">Happy Customers</p>
+               </div>
+               <div>
+                 <p className="text-2xl font-heading font-bold">🇨🇦</p>
+                 <p className="text-sm text-muted-foreground">Canada-Wide</p>
+               </div>
               </div>
             </div>
           </div>

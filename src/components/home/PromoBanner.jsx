@@ -1,33 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
-export default function PromoBanner({ image, title, subtitle }) {
+export default function PromoBanner() {
   return (
-    <section className="py-8 md:py-16">
+    <section className="py-6 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative rounded-3xl overflow-hidden min-h-[300px] md:min-h-[400px] flex items-center"
-        >
-          <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40" />
-          <div className="relative z-10 p-8 md:p-16 max-w-lg">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground">{title || 'Fresh Arrivals Weekly'}</h2>
-            <p className="mt-3 text-primary-foreground/70 text-lg">
-              {subtitle || 'Discover new authentic African ingredients sourced directly from trusted suppliers.'}
-            </p>
-            <Button asChild size="lg" className="mt-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full">
-              <Link to="/shop">
-                Explore Now <ArrowRight className="w-4 h-4 ml-2" />
+        <div className="grid md:grid-cols-2 gap-4">
+          {/* Banner 1 */}
+          <div className="relative rounded-2xl overflow-hidden h-44 bg-primary flex items-center shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1553163147-622ab57be1c7?w=800&q=80"
+              alt="Spices"
+              className="absolute inset-0 w-full h-full object-cover opacity-30"
+            />
+            <div className="relative px-8">
+              <span className="text-xs font-bold text-accent uppercase tracking-widest">Special Offer</span>
+              <h3 className="text-2xl font-black text-white mt-1 mb-2">African Spices<br />& Seasonings</h3>
+              <Link to="/shop?category=spices" className="inline-block bg-accent text-accent-foreground text-xs font-bold px-4 py-2 rounded hover:bg-accent/90 transition-colors">
+                Shop Spices →
               </Link>
-            </Button>
+            </div>
           </div>
-        </motion.div>
+
+          {/* Banner 2 */}
+          <div className="relative rounded-2xl overflow-hidden h-44 bg-green-800 flex items-center shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80"
+              alt="Fresh Produce"
+              className="absolute inset-0 w-full h-full object-cover opacity-25"
+            />
+            <div className="relative px-8">
+              <span className="text-xs font-bold text-accent uppercase tracking-widest">Fresh Stock</span>
+              <h3 className="text-2xl font-black text-white mt-1 mb-2">Fresh Nigerian<br />Foodstuffs</h3>
+              <Link to="/shop?category=fresh_foods" className="inline-block bg-white text-green-800 text-xs font-bold px-4 py-2 rounded hover:bg-gray-100 transition-colors">
+                Shop Fresh →
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
