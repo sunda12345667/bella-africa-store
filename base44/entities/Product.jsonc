@@ -1,0 +1,89 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description"
+    },
+    "price": {
+      "type": "number",
+      "description": "Product price in CAD"
+    },
+    "compare_price": {
+      "type": "number",
+      "description": "Original price before discount"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "african_foodstuff",
+        "nigerian_groceries",
+        "frozen_foods",
+        "spices",
+        "fresh_produce",
+        "drinks",
+        "snacks",
+        "hair_products",
+        "beauty_products",
+        "kitchen_essentials"
+      ],
+      "description": "Product category"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Main product image URL"
+    },
+    "gallery_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional product images"
+    },
+    "stock_status": {
+      "type": "string",
+      "enum": [
+        "in_stock",
+        "low_stock",
+        "out_of_stock"
+      ],
+      "default": "in_stock"
+    },
+    "stock_quantity": {
+      "type": "number",
+      "default": 0
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_best_seller": {
+      "type": "boolean",
+      "default": false
+    },
+    "weight": {
+      "type": "string",
+      "description": "Product weight/size"
+    },
+    "nutritional_info": {
+      "type": "string",
+      "description": "Nutritional details"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Promotion",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "discount_percent": {
+      "type": "number"
+    },
+    "promo_code": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "position": {
+      "type": "string",
+      "enum": [
+        "hero",
+        "banner",
+        "popup"
+      ],
+      "default": "banner"
+    }
+  },
+  "required": [
+    "title"
+  ]
+}
