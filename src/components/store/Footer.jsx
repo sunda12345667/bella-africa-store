@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MessageCircle, MapPin, Phone, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
+import { MessageCircle, MapPin, Phone, Mail } from 'lucide-react';
 import { getWhatsAppSupportLink } from '@/lib/whatsappService';
 import { CATEGORIES } from '@/lib/categories';
 
@@ -26,17 +26,7 @@ export default function Footer() {
               <MessageCircle className="w-4 h-4" />
               Chat on WhatsApp
             </a>
-            <div className="flex gap-3 mt-4">
-              <a href="#" className="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-accent/20 transition-colors">
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-accent/20 transition-colors">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-accent/20 transition-colors">
-                <Twitter className="w-4 h-4" />
-              </a>
-            </div>
+
           </div>
 
           {/* Quick Links */}
@@ -86,7 +76,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-accent" />
-                <span>hello@bellaafrica.ca</span>
+                <span>olasubomiadekanbi@gmail.com</span>
               </div>
             </div>
             <div className="mt-6 bg-white/10 rounded p-4 text-sm">

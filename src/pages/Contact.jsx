@@ -45,7 +45,7 @@ export default function Contact() {
                 {[
                   { icon: MapPin, label: 'Visit Us', value: '3817 46th Ave, Beaumont AB T4X 2W4, Canada' },
                   { icon: Phone, label: 'WhatsApp / Call', value: '+1 438-836-5678' },
-                  { icon: Mail, label: 'Email Us', value: 'hello@bellaafrica.ca' },
+                  { icon: Mail, label: 'Email Us', value: 'olasubomiadekanbi@gmail.com' },
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-start gap-4 p-4 rounded-xl bg-muted/50">
                     <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
