@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { toast } from '@/hooks/use-toast';
+import { toast } from 'sonner';
 import { getCategoryName } from '@/lib/categories';
 import ProductForm from '@/components/admin/ProductForm';
 
@@ -25,7 +25,7 @@ export default function Products() {
     mutationFn: (id) => base44.entities.Product.delete(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin', 'products'] });
-      toast({ title: 'Product deleted' });
+      toast.success('Product deleted');
     },
   });
 

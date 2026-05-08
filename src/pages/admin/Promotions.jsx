@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { toast } from '@/hooks/use-toast';
+import { toast } from 'sonner';
 import { Upload } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -26,7 +26,7 @@ export default function Promotions() {
     mutationFn: (id) => base44.entities.Promotion.delete(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin', 'promotions'] });
-      toast({ title: 'Promotion deleted' });
+      toast.success('Promotion deleted');
     },
   });
 
@@ -100,7 +100,7 @@ function PromoForm({ promo, onClose }) {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin', 'promotions'] });
-      toast({ title: promo ? 'Updated' : 'Created' });
+      toast.success(promo ? 'Updated' : 'Created');
       onClose();
     },
   });

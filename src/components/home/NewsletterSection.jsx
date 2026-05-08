@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { toast } from '@/hooks/use-toast';
+import { toast } from 'sonner';
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState('');
@@ -11,7 +11,7 @@ export default function NewsletterSection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email) {
-      toast({ title: 'Subscribed!', description: 'Thank you for joining our community.' });
+      toast.success('Subscribed!', { description: 'Thank you for joining our community.' });
       setEmail('');
     }
   };

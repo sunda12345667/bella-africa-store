@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
-import { toast } from '@/hooks/use-toast';
+import { toast } from 'sonner';
 import { CATEGORIES } from '@/lib/categories';
 import { Upload } from 'lucide-react';
 
@@ -43,7 +43,7 @@ export default function ProductForm({ product, onClose }) {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['admin', 'products'] });
       queryClient.invalidateQueries({ queryKey: ['products'] });
-      toast({ title: isEditing ? 'Product updated' : 'Product created' });
+      toast.success(isEditing ? 'Product updated' : 'Product created');
       onClose();
     },
   });

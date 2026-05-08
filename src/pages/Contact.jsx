@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { toast } from '@/hooks/use-toast';
+import { toast } from 'sonner';
 import { getWhatsAppSupportLink } from '@/lib/whatsappService';
 
 export default function Contact() {
@@ -13,7 +13,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast({ title: 'Message Sent!', description: "We'll get back to you shortly." });
+    toast.success('Message Sent!', { description: "We'll get back to you shortly." });
     setForm({ name: '', email: '', message: '' });
   };
 
