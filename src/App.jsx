@@ -36,7 +36,7 @@ const AuthenticatedApp = () => {
       <div className="fixed inset-0 flex items-center justify-center bg-background">
         <div className="flex flex-col items-center gap-3">
           <div className="w-8 h-8 border-4 border-muted border-t-accent rounded-full animate-spin"></div>
-          <span className="text-sm text-muted-foreground font-heading">Bella Africa</span>
+          <span className="text-sm text-muted-foreground font-heading">Bella Africa Store</span>
         </div>
       </div>
     );

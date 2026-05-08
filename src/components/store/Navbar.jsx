@@ -55,10 +55,11 @@ export default function Navbar() {
             <Link to="/" className="shrink-0">
               <div className="leading-none">
                 <div className="text-lg md:text-2xl font-black tracking-tight">
-                  <span className="text-primary">BELLA</span>
-                  <span className="text-accent"> AFRICA</span>
+                 <span className="text-primary">BELLA</span>
+                 <span className="text-accent"> AFRICA</span>
+                 <span className="text-primary"> STORE</span>
                 </div>
-                <div className="text-[9px] md:text-[10px] text-gray-400 font-medium tracking-widest uppercase">Premium African Store</div>
+                <div className="text-[9px] md:text-[10px] text-gray-400 font-medium tracking-widest uppercase">Premium African Grocery</div>
               </div>
             </Link>
 
@@ -157,7 +158,7 @@ export default function Navbar() {
           <div className="fixed inset-0 bg-black/50 z-[60]" onClick={() => setMobileOpen(false)} />
           <div className="fixed left-0 top-0 bottom-0 w-72 bg-white z-[70] overflow-y-auto">
             <div className="flex items-center justify-between p-4 border-b bg-primary text-white">
-              <span className="text-lg font-black">BELLA <span className="text-accent">AFRICA</span></span>
+              <span className="text-lg font-black">BELLA <span className="text-accent">AFRICA</span> STORE</span>
               <button onClick={() => setMobileOpen(false)}><X className="w-5 h-5" /></button>
             </div>
             {/* Mobile search */}

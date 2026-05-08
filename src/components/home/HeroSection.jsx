@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 
 const SLIDES = [
   {
-    bg: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1600&q=85',
+    bg: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=1600&q=85',
     badge: '🇨🇦 Canada-Wide Delivery',
     title: 'Authentic African\nGroceries Delivered',
     desc: 'Serving Beaumont, Edmonton & all of Canada. Fresh African foodstuffs, spices and groceries — straight to your door.',

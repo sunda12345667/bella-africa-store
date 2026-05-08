@@ -25,8 +25,8 @@ export default function PromoBanner() {
           {/* Banner 2 */}
           <div className="relative rounded-2xl overflow-hidden h-44 bg-green-800 flex items-center shadow-sm">
             <img
-              src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80"
-              alt="Fresh Produce"
+              src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&q=80"
+              alt="Nigerian Foodstuffs"
               className="absolute inset-0 w-full h-full object-cover opacity-25"
             />
             <div className="relative px-8">

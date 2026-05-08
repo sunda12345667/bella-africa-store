@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-black mb-3">
-              BELLA <span className="text-accent">AFRICA</span>
+              BELLA <span className="text-accent">AFRICA</span> STORE
             </h3>
             <p className="text-white/60 text-sm leading-relaxed mb-4">
               Your premium African grocery destination in Canada. Bringing the authentic taste of home to your doorstep.
