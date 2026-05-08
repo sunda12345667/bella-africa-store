@@ -27,7 +27,7 @@ export default function Checkout() {
     setSending(true);
     setTimeout(() => {
       const link = generateWhatsAppLink({ items, subtotal, ...form });
-      window.open(link, '_blank');
+      window.location.href = link;
       clearCart();
       setSending(false);
     }, 1500);
