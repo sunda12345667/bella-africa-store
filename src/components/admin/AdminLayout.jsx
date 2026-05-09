@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, Package, Tag, ShoppingBag, Users, Settings,
-  ArrowLeft, LogOut, Menu, X, ChevronRight
+  ArrowLeft, LogOut, Menu, X, ChevronRight, Database
 } from 'lucide-react';
 import AdminLogin from './AdminLogin';
 
@@ -13,6 +13,7 @@ const ADMIN_LINKS = [
   { path: '/admin/customers', icon: Users, label: 'Customers' },
   { path: '/admin/promotions', icon: Tag, label: 'Promotions' },
   { path: '/admin/settings', icon: Settings, label: 'Settings' },
+  { path: '/admin/supabase', icon: Database, label: 'Supabase' },
 ];
 
 export default function AdminLayout() {

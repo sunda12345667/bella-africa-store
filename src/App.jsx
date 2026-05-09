@@ -27,6 +27,7 @@ import Promotions from '@/pages/admin/Promotions';
 import Orders from '@/pages/admin/Orders';
 import Customers from '@/pages/admin/Customers';
 import AdminSettings from '@/pages/admin/Settings';
+import SupabaseProjects from '@/pages/admin/SupabaseProjects';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -75,6 +76,7 @@ const AuthenticatedApp = () => {
           <Route path="/admin/orders" element={<Orders />} />
           <Route path="/admin/customers" element={<Customers />} />
           <Route path="/admin/settings" element={<AdminSettings />} />
+          <Route path="/admin/supabase" element={<SupabaseProjects />} />
         </Route>
 
         <Route path="*" element={<PageNotFound />} />
